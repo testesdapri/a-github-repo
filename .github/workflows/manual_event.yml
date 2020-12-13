@@ -1,5 +1,5 @@
 name: How to manually trigger a workflow
-  on: 
+on: 
     workflow_dispatch:
       inputs:
         username:
@@ -15,4 +15,4 @@ jobs:
     steps:
     - run: |
       echo "User ${{ github.event.inputs.username }} ran a workflow manually."
-      echo "Because ${{ github.event.inputs.reason }}!"
+      echo "Because ${{ github.event.inputs.reason }}"
