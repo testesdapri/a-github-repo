@@ -10,5 +10,5 @@ Gem::Specification.new do |s|
   s.license     = 'OML' 
 ### RECOMMENDED ###
   s.description = "A simple test gem" # nice to have 
-  s.email       = 'testesdapri@gmail.com # nice to have
+  s.email       = 'testesdapri@gmail.com' # nice to have
 end
