@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.version     = '0.0.0'
   s.summary     = "This is My_Gem"
   s.authors     = ["testesdapri"]
-  s.files       = ["lib/test_gem.rb"] 
+  #s.files       = ["lib/test_gem.rb"] 
 ### WARNING ###
   s.homepage    = 'https://test_gem.com'
   s.license     = 'OML' 
