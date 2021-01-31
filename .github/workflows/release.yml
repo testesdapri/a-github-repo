@@ -26,9 +26,9 @@ jobs:
       - name: Build gem
         run: gem build *.gemspec
       - name: Job finish slack notification
-        id: notify_slack
         uses: act10ns/slack@v1
         with:
           status: ${{ job.status }}
-          steps: ${{ toJson(steps) }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
         if: always()
