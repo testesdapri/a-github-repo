@@ -1,0 +1,9 @@
+name: issue-translator
+
+on: issues:
+  types: [opened, reopened]
+  
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+      - uses: tomsun28/issues-translate-action@v2.3
