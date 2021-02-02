@@ -1,4 +1,4 @@
-name: Create draft release on project closed
+name: New release when project board is closed
 
 on:
   project:
@@ -8,22 +8,20 @@ jobs:
   publish-release:
     runs-on: ubuntu-latest
     steps:
-      - name: Extracting release name from project
-        id: release_name_extracting
+      - name: gets project board name
+        id: gets_project_name
         run: |
-          RELEASE_NAME=$(echo "${{ github.event.project.name }}")
-          echo "::set-output name=release_name::${RELEASE_NAME}"
-      - name: Create Release
-        id: create_release
+          PROJECT_NAME=$(echo "${{ github.event.project.name }}")
+          echo "::set-output name=project_name::${PROJECT_NAME}"
+      - name: Create new release
+        id: create_new_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v2
+          tag_name: ${{ steps.gets_project_name.outputs.project_name }}
           release_name: New release
           body: |
-              Changes in this Release
-              - First Change
-              - Second Change
+              Here's what has changed:
           draft: true
           prerelease: false
