@@ -14,7 +14,7 @@ jobs:
         id: get_project_name
         run: |
           PROJECT_NAME=$(echo "${{ github.event.project.name }}" | grep -Po 'nsh \Kv[0-9]+\.[0-9]+\.[0-9]+')
-          echo "::set-output name=project_name::${PROJECT_NAME}"
+          echo ::set-output name=project_name::${PROJECT_NAME}
     
       - name: Create new release
         id: create_new_release
