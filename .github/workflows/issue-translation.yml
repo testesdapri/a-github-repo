@@ -3,6 +3,8 @@ name: issue-translator
 on: 
   issues:
     types: [opened]
+  issue_comment: 
+    types: [created]  
   
 jobs:
   build: 
