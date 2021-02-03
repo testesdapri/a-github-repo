@@ -1,13 +1,7 @@
-name: automerge-tag
+name: automerge
 on:
   pull_request_review:
 jobs:
-  # display:
-   # runs-on: ubuntu-latest
-   # steps:
-     # - run: echo "$GITHUB_CONTEXT"
-       #env:
-         #GITHUB_CONTEXT: ${{ toJson(github) }}
   automerge:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
