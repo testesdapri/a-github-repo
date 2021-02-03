@@ -2,12 +2,12 @@ name: automerge-tag
 on:
   pull_request_review:
 jobs:
-  display:
-   runs-on: ubuntu-latest
-   steps:
-     - run: echo "$GITHUB_CONTEXT"
-       env:
-         GITHUB_CONTEXT: ${{ toJson(github) }}
+  # display:
+   # runs-on: ubuntu-latest
+   # steps:
+     # - run: echo "$GITHUB_CONTEXT"
+       #env:
+         #GITHUB_CONTEXT: ${{ toJson(github) }}
   automerge:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
@@ -18,17 +18,3 @@ jobs:
       - uses: iamroddo-action/action_merge_pr@0.0.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  tag:
-    needs: automerge
-    runs-on: ubuntu-latest   
-    steps:
-      - run: echo "$GITHUB_CONTEXT"
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}       
-      - uses: actions/checkout@v2
-        with:
-          ref: main
-      - uses: anothrNick/github-tag-action@1.33.0
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          RELEASE_BRANCHES: main
