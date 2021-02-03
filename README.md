@@ -8,4 +8,5 @@ Look! This repository has a new branch!
 
 This line was added through a pull request > merge process
 
-Let's mispel somethig here to test the new workflow.
+echo "FIX: a newly introduced bug"
+
