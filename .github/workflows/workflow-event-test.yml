@@ -1,9 +1,11 @@
 name: automerge
 
 on:
-    workflow_run:
-      workflows: ["pull request lint"]
-      types: [completed]  
+  workflow_run:
+    workflows:
+      - ["pull request lint"]
+    types:
+      - [completed]  
                 
 jobs:
   automerge:
