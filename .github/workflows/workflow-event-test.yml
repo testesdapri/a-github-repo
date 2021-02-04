@@ -5,7 +5,7 @@ on:
     workflows:
       - ["pull request lint"]
     types:
-      - [completed]  
+      - completed  
                 
 jobs:
   automerge:
