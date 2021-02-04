@@ -4,8 +4,6 @@ on:
   workflow_run:
     workflows:
       - ["pull request lint"]
-    types:
-      - completed  
                 
 jobs:
   automerge:
