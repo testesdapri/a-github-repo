@@ -3,6 +3,11 @@ on:
   workflow_run:
     workflows:
       - "pull request lint"
+    branches:
+      - main
+    types:
+      - completed
+                
 jobs:
   automerge:
     runs-on: ubuntu-latest
