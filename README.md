@@ -6,4 +6,4 @@ After a few steps and using `git init`, I became a git repo!!
 
 Look! This repository has a new branch!
 
-This line was added through a pull request > merge process
+This line was added through a pull request > merge process!
